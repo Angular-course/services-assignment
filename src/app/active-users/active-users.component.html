@@ -1,8 +1,14 @@
-<h3>Active Users</h3>
+<div class="row">
+    <div class="col-xs-6">
+        <h3>Active Users</h3>
+    </div>
+    <div class="col-xs-6" *ngIf="counter">
+        <h3>users from active to inactive {{counter}}</h3>
+    </div>
+</div>
 <ul class="list-group">
-  <li
-          class="list-group-item"
-          *ngFor="let user of users; let i = index">
-    {{ user }} | <a href="#" (click)="onSetToInactive(i)">Set to Inactive</a>
-  </li>
+    <li class="list-group-item"
+        *ngFor="let user of activeUsers; let i = index">
+        {{ user }} | <a href="#" (click)="onSetToInactive(i)">Set to Inactive</a>
+    </li>
 </ul>
